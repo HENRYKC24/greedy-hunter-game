@@ -1,0 +1,9 @@
+.container {
+  background-color: #43144A;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  margin: 50 20;
+}
