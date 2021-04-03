@@ -5,6 +5,7 @@ import Styles from "./Styles.module.css";
 
 const GameStart = (props) => {
   const [inputValue, setInputValue] = useState(5);
+  
   const {
     main,
     container,
@@ -20,7 +21,7 @@ const GameStart = (props) => {
   } = Styles;
 
   const handleChange = (e) => {
-    setInputValue(() => e.target.value);
+    setInputValue(e.target.value);
   };
 
   return (
@@ -32,7 +33,7 @@ const GameStart = (props) => {
 
         <div className={middle}>
           <img className={char} src={Character} alt="character" />
-          <div className={title}>{props.title}</div>
+          <div className={title}>{props.state.title}</div>
 
           <div className={text1}>
             The aim is to eat all the food in record time
