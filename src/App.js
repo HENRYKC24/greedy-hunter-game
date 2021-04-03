@@ -21,7 +21,7 @@ const App = () => {
   return (
     <>
       {state.showPlay ? (
-        <GameStart changeState={changeState} state={state} title={state.title} />
+        <GameStart changeState={changeState} state={state} />
       ) : (
         <GamePlay changeState={changeState} state={state} />
       )}
