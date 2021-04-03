@@ -4,4 +4,50 @@
   width: 706px;
   height: 778.22px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 17.5186px;
+}
+
+.life {
+  position: absolute;
+ 
+}
+
+.heart {
+  /* position: absolute; */
+  left: 0.5;
+  margin: -10px -140px;
+}
+
+.lifeBar {
+  /* position: absolute; */
+  left: 0.5;
+  margin: 1px 0 0 -90px;
+}
+
+.lifeBack {
+  /* position: absolute; */
+  left: 0.5;
+  margin-left: -90px;
+}
+
+.topContainer {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-self: stretch;
+  align-content: stretch;
+  border: 2.46869px solid #853594;
+  width: fit-content;
+  margin: auto;
 }
