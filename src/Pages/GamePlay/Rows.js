@@ -9,11 +9,15 @@ const Rows = ({
   lost,
   setLost,
   contentArray,
+  setContentArray,
   rows,
   eatenFood,
   setEatenFood,
   clickedArray,
   setClickedArray,
+  randomPlayerId,
+  setRandomPlayerId,
+  setInputValue,
 }) => {
   const produceRows = (totalCells, rows) => {
     let totalRows = [];
@@ -30,11 +34,15 @@ const Rows = ({
           setLost={setLost}
           setMoves={setMoves}
           contentArray={contentArray}
+          setContentArray={setContentArray}
           rows={rows}
           eatenFood={eatenFood}
           setEatenFood={setEatenFood}
           clickedArray={clickedArray}
           setClickedArray={setClickedArray}
+          randomPlayerId={randomPlayerId}
+          setRandomPlayerId={setRandomPlayerId}
+          setInputValue={setInputValue}
         />
       );
       if (i % rows === 0) {

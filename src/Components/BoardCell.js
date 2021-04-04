@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Food from "../Assets/food.png";
 import Char from "../Assets/character2.png";
 
 const BoardCell = ({
   id,
   contentArray,
+  setContentArray,
   setMoves,
   moves,
   lost,
@@ -16,8 +17,11 @@ const BoardCell = ({
   setEatenFood,
   clickedArray,
   setClickedArray,
+  randomPlayerId,
+  setRandomPlayerId,
+  setInputValue,
 }) => {
-  const [state, setState] = useState(3);
+  // const [state, setState] = useState(Char);
   return (
     <div
       style={{
@@ -28,59 +32,43 @@ const BoardCell = ({
         textAlign: "center",
       }}
       onClick={() => {
-        // console.log(setLost);
-        if(!clickedArray.includes(id)) {
-          setClickedArray(prev => {
-            return [...prev, id];
-          });
+        const abs = Math.abs(id - randomPlayerId);
+        
+        if (
+          !clickedArray.includes(id) &&
+          contentArray.includes(id) &&
+          (abs === 1 || abs === rows)
+        ) {
+          setEatenFood((prev) => prev + 1);
+        }
+
+        if (moves.remainingMoves <= 0 && eatenFood === rows) {
+          setWin(() => true);
+        }
+
+        if (moves.maximumMoves - moves.totalMoves === 0) {
+          setLost(true);
+          
+        }
+
+        if (abs === 1 || abs === rows) {
           setMoves((prev) => ({
             ...prev,
             totalMoves: prev.totalMoves + 1,
           }));
-        }
-        if (contentArray.includes(id)) {
-          setState(() => 1);
-        } else {
-          setState(() => 2);
-        }
-
-        if(!clickedArray.includes(id) && contentArray.includes(id)) {
-          setEatenFood(prev => prev + 1);
-        }
-
-        if(moves.remainingMoves <= 0 && eatenFood === rows) {
-          setWin(() => true);
-        }
-        
-        if(moves.maximumMoves - moves.totalMoves === 0) {
-          setLost(true);
-          setState(() => {
-            return {
-              showStart: true,
-              showPlay: false,
-              title: "Greedy Hunter",
-              grid: 0,
-              text1: "The aim is to eat all the food in record time",
-              text2: "Configure your game grid below 👇🏼",
-              buttonText: "Start Game",
-            };
-          });
+          setRandomPlayerId(id);
+          if (contentArray.includes(id)) {
+            contentArray.splice(contentArray.indexOf(id), 1);
+            setContentArray(contentArray);
+          }
         }
       }}
     >
-      {state === 1 ? (
-        <img
-          style={{ width: 30, height: 30 }}
-          src={Food}
-          alt="Food"
-        />
+      {contentArray.includes(id) ? (
+        <img style={{ width: 30, height: 30 }} src={Food} alt="Food" />
       ) : null}
-      {state === 2 ? (
-        <img
-          style={{ width: 30, height: 30 }}
-          src={Char}
-          alt="Character"
-        />
+      {!contentArray.includes(id) && id === randomPlayerId ? (
+        <img style={{ width: 30, height: 30 }} src={Char} alt="Food" />
       ) : null}
     </div>
   );
