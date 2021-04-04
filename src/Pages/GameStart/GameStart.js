@@ -3,6 +3,8 @@ import SideImage from "../../Assets/sideGrid.png";
 import Character from "../../Assets/character.png";
 import Styles from "./Styles.module.css";
 import GamePlay from "../GamePlay/GamePlay";
+import Up from "../../Assets/up.png";
+import Down from "../../Assets/down.png";
 
 const GameStart = ({ state }) => {
   const [inputValue, setInputValue] = useState(5);
@@ -19,23 +21,35 @@ const GameStart = ({ state }) => {
     input,
     button,
     gridContainer,
+    btns,
+    btnUp,
+    btnDown,
   } = Styles;
   const inputValue2 = useRef(inputValue);
 
   const handleChange = (e) => {
-    
+    setInputValue(e.target.value);
+  };
 
-      setInputValue(e.target.value);
-    
+  const handleIncrease = param => {
+    if(param < 12) {
+      setInputValue(param + 1);
+    }
+  };
+
+  const handleDecrease = param => {
+    if(param > 5) {
+      setInputValue(param - 1);
+    }
   };
 
   useEffect(() => {
-    if(state.inputValue) {
-      inputValue2.current = (state.inputValue);
+    if (state.inputValue) {
+      inputValue2.current = state.inputValue;
     }
   });
-    // setInputValue(inputValue2.current);
-  
+  // setInputValue(inputValue2.current);
+
   const GameStart = (
     <div className={main}>
       <div className={container}>
@@ -48,12 +62,12 @@ const GameStart = ({ state }) => {
           <div className={title}>{state.title}</div>
 
           <div className={text1}>
-            {state.text1} {state.food ? state.food + '/' + state.grid: null}
+            {state.text1} {state.food ? state.food + "/" + state.grid : null}
           </div>
           <div className={text2}>
             {state.text2}
             {state.sec2 || state.sec1 || state.min1 || state.min2
-              ? (state.min1 + state.min2 + ":" + state.sec1 + state.sec2) 
+              ? state.min1 + state.min2 + ":" + state.sec1 + state.sec2
               : null}
           </div>
           <div
@@ -65,7 +79,7 @@ const GameStart = ({ state }) => {
           >
             <div className={gameGrid}>Game grid</div>
 
-            <input
+            {/* <input
               onChange={handleChange}
               className={input}
               autoFocus
@@ -73,7 +87,23 @@ const GameStart = ({ state }) => {
               max="12"
               type="number"
               value={inputValue}
-            />
+            /> */}
+
+            <div className="quantity">
+              <input
+                onChange={handleChange}
+                className={input}
+                type="text"
+                min="5"
+                max="12"
+                autoFocus
+                value={inputValue}
+              />
+              <div className={btns}>
+                <div><img onClick={() => {handleIncrease(inputValue)}} className={btnUp} src={Up} alt="up" /></div>
+                <div><img onClick={() => {handleDecrease(inputValue)}} className={btnDown} src={Down} alt="down" /></div>
+              </div>
+            </div>
           </div>
           <button
             onClick={() => {
@@ -94,7 +124,7 @@ const GameStart = ({ state }) => {
 
   return start ? (
     <GamePlay state={{ ...state, grid: inputValue }} />
-  ) :  (
+  ) : (
     GameStart
   );
 };
