@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+let Min, Sec;
 const Counter = () => {
   const [secs, setSecs] = useState(0);
   const [mins, setMins] = useState(0);
@@ -18,7 +18,8 @@ const Counter = () => {
       clearInterval(interval);
     };
   });
-
+  Min = mins;
+  Sec = secs;
   return (
     <div>
       Time spent:{" "}
@@ -32,3 +33,5 @@ const Counter = () => {
 };
 
 export default Counter;
+export {Min, Sec};
+
