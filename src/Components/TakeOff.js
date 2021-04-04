@@ -6,7 +6,7 @@ const TakeOff = () => {
     showStart: false,
     showPlay: true,
     title: "Greedy Hunter",
-    grid: 0,
+    grid: 5,
     text1: "The aim is to eat all the food in record time",
     text2: "Configure your game grid below 👇🏼",
     buttonText: "Start Game",
