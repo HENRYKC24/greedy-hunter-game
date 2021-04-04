@@ -52,9 +52,7 @@ const BoardCell = ({
           setWin(() => true);
         }
         
-        console.log(moves.maximumMoves, moves.totalMoves, moves);
         if(moves.maximumMoves - moves.totalMoves === 0) {
-          console.log('passed!')
           setLost(true);
           setState(() => {
             return {
