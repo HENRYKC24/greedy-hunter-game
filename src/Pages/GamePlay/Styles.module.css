@@ -16,20 +16,20 @@
 
 .heart {
   /* position: absolute; */
-  left: 0.5;
-  margin: -10px -140px;
+  /* left: 0.9; */
+  margin: -10px -138px;
 }
 
 .lifeBar {
-  /* position: absolute; */
-  left: 0.5;
-  margin: 1px 0 0 -90px;
+  position: absolute;
+  left: 1;
+  margin: 1.3px 0 0 -91px;
 }
 
 .lifeBack {
   /* position: absolute; */
   left: 0.5;
-  margin-left: -90px;
+  margin-left: -92px;
 }
 
 .topContainer {
