@@ -105,6 +105,7 @@
   border-radius: 5px;
   width: 91px;
   height: 44px;
+  background-color:  transparent;
   /* left: 219px;
 top: 12px; */
   margin-left: 20px;
@@ -115,14 +116,32 @@ top: 12px; */
   /* line-height: 44px; */
   /* identical to box height */
 
-  color: #000;
+  color: #fff;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: blue;
-  color: red;
+  -webkit-appearance: none;
+  background-color: transparent;
   margin: 0;
+}
+
+.btns {
+  position: relative;
+  top: -42px;
+  left: 37px;
+}
+
+.btnUp {
+  height: 9px;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+
+.btnDown {
+  height: 9px;
+  margin-bottom: 2px;
+  cursor: pointer;
 }
 
 .button {
