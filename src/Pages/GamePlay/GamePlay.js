@@ -7,9 +7,10 @@ import LifeBar from "../../Assets/live.png";
 import Rows from "./Rows";
 import Counter, { Min, Sec } from "../../Components/Counter";
 import randonNumbers from "../../Utilities/GenerateRandomNumbers";
+import randonPlayer from "../../Utilities/RandomlyPlacePlayer";
 import GameStart from "../GameStart/GameStart";
 
-const GamePlay = ({ state, setState }) => {
+const GamePlay = ({ state, setInputValue }) => {
   const [moves, setMoves] = useState({
     maximumMoves: Math.round((state.grid * state.grid) / 2),
     totalMoves: 0,
@@ -20,39 +21,41 @@ const GamePlay = ({ state, setState }) => {
   const [clickedArray, setClickedArray] = useState([]);
   const [noMore, setNoMore] = useState(true);
   const [contentArray, setContentArray] = useState([]);
+  const [randomPlayerId, setRandomPlayerId] = useState(0);
   
   const counter = useRef(<Counter />);
   if (noMore) {
     let array = randonNumbers(state.grid);
+    let randomPlayerNumber = randonPlayer(state.grid, array);
     setContentArray(array);
+    setRandomPlayerId(randomPlayerNumber);
     setNoMore(() => false);
   }
 
-  const { board, life, topContainer, heart, lifeBar, lifeBack, grid } = Styles;
+  const { board, life, topContainer, heart, lifeBar, lifeBack, grid, gridTimes } = Styles;
   // console.log(moves, eatenFood);
   const Play = (
     <div
       style={{
         backgroundImage: `url(${BackgroundImage})`,
-        backgroundAttachment: "fixed",
+        backgroundAttachment: 'initial',
         backgroundSize: "100% 100%",
         width: "100%",
-        minHeight: 1000,
-        paddingTop: 100,
-        paddingBottom: 100,
+        minHeight: 700,
+        paddingTop: 60,
       }}
     >
       <div className={board}>
         <div className={topContainer}>
-          <div>
+          <div className={gridTimes}>
             Grid:{" "}
-            <span style={{ fontWeight: "bolder" }}>
-              {state.grid} &times; {state.grid}
+            <span style={{ fontWeight: "bolder", marginRight: 80 }}>
+              {state.grid}&nbsp;&times;&nbsp;{state.grid}
             </span>
           </div>
-          <div>
+          <div style={{marginRight: 70}}>
             <img
-              style={{ width: 150 }}
+              style={{ width: 150}}
               className={`${life} ${lifeBack}`}
               src={LifeBarBackground}
               alt="Life bar background"
@@ -79,10 +82,14 @@ const GamePlay = ({ state, setState }) => {
             setWin={setWin}
             setMoves={setMoves}
             contentArray={contentArray}
+            setContentArray={setContentArray}
             grid={grid}
             rows={state.grid}
             eatenFood={eatenFood}
             setEatenFood={setEatenFood}
+            randomPlayerId={randomPlayerId}
+            setRandomPlayerId={setRandomPlayerId}
+            setInputValue={setInputValue}
           />
         </div>
 
@@ -124,6 +131,7 @@ const GamePlay = ({ state, setState }) => {
         text2: "Time Spent: ",
         buttonText: "Start again",
         inputValue: state.grid,
+        moves: moves,
       }}
     />
   ) : (
@@ -140,6 +148,7 @@ const GamePlay = ({ state, setState }) => {
         text2: "Time Spent: ",
         buttonText: "Start again",
         inputValue: state.grid,
+        moves: moves,
       }}
     />
   );
