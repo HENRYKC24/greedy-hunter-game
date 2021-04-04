@@ -5,7 +5,7 @@ import Life from "../../Assets/heart.png";
 import LifeBarBackground from "../../Assets/live-track.png";
 import LifeBar from "../../Assets/live.png";
 import Rows from "./Rows";
-import Counter, {Min, Sec} from "../../Components/Counter";
+import Counter, { Min, Sec } from "../../Components/Counter";
 import randonNumbers from "../../Utilities/GenerateRandomNumbers";
 import GameStart from "../GameStart/GameStart";
 
@@ -20,6 +20,7 @@ const GamePlay = ({ state, setState }) => {
   const [clickedArray, setClickedArray] = useState([]);
   const [noMore, setNoMore] = useState(true);
   const [contentArray, setContentArray] = useState([]);
+  
   const counter = useRef(<Counter />);
   if (noMore) {
     let array = randonNumbers(state.grid);
@@ -51,11 +52,13 @@ const GamePlay = ({ state, setState }) => {
           </div>
           <div>
             <img
+              style={{ width: 150 }}
               className={`${life} ${lifeBack}`}
               src={LifeBarBackground}
               alt="Life bar background"
             />
             <img
+              style={{ width: ((moves.maximumMoves - moves.totalMoves) * 150) /moves.maximumMoves, height: 15 }}
               className={`${life} ${lifeBar}`}
               src={LifeBar}
               alt="Life bar"
@@ -104,31 +107,35 @@ const GamePlay = ({ state, setState }) => {
       </div>
     </div>
   );
-  console.log("loosing: ", lost, "Eaten: ", eatenFood, Number(state.grid));
-  return moves.maximumMoves - moves.totalMoves !== 0 && eatenFood !== Number(state.grid) ? (
+  return moves.maximumMoves - moves.totalMoves !== 0 &&
+    eatenFood !== Number(state.grid) ? (
     Play
-  ) : eatenFood === Number(state.grid) ? <GameStart state={{
+  ) : eatenFood === Number(state.grid) ? (
+    <GameStart
+      state={{
         ...state,
         title: "Bravo!",
         text1: "Total Food: ",
         food: eatenFood,
-        min1: Min.toString().length === 1 ? '0' : '',
+        min1: Min.toString().length === 1 ? "0" : "",
         min2: Min,
-        sec1: Sec.toString().length === 1 ? '0' : '',
+        sec1: Sec.toString().length === 1 ? "0" : "",
         sec2: Sec,
         text2: "Time Spent: ",
         buttonText: "Start again",
         inputValue: state.grid,
-      }} /> : ( 
+      }}
+    />
+  ) : (
     <GameStart
       state={{
         ...state,
         title: "Game Over!",
         text1: "Total Food: ",
         food: eatenFood,
-        min1: Min.toString().length === 1 ? '0' : '',
+        min1: Min.toString().length === 1 ? "0" : "",
         min2: Min,
-        sec1: Sec.toString().length === 1 ? '0' : '',
+        sec1: Sec.toString().length === 1 ? "0" : "",
         sec2: Sec,
         text2: "Time Spent: ",
         buttonText: "Start again",
