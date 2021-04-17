@@ -1,6 +1,7 @@
 import React from "react";
 import Food from "../Assets/food.png";
 import Char from "../Assets/character2.png";
+import Styles from "./Styles.module.css";
 
 const BoardCell = ({
   id,
@@ -22,15 +23,10 @@ const BoardCell = ({
   setInputValue,
 }) => {
   // const [state, setState] = useState(Char);
+  const { div, foodChar } = Styles;
   return (
     <div
-      style={{
-        width: 45,
-        height: 40,
-        lineHeight: 3.6,
-        border: "1.234345px solid #853594",
-        textAlign: "center",
-      }}
+      className={div}
       onClick={() => {
         const abs = Math.abs(id - randomPlayerId);
 
@@ -60,10 +56,10 @@ const BoardCell = ({
       }}
     >
       {contentArray.includes(id) ? (
-        <img style={{ width: 30, height: 30 }} src={Food} alt="Food" />
+        <img className={foodChar} src={Food} alt="Food" />
       ) : null}
       {!contentArray.includes(id) && id === randomPlayerId ? (
-        <img style={{ width: 30, height: 30 }} src={Char} alt="Food" />
+        <img className={foodChar} src={Char} alt="Character" />
       ) : null}
     </div>
   );
