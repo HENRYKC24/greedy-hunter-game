@@ -1,0 +1,38 @@
+.div {
+  width: 45px;
+  height: 40px;
+  line-height: 3.6;
+  border: 1.234345px solid #853594;
+  text-align: center;
+}
+
+.foodChar {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 635px) {
+  .div {
+    width: 35px;
+    height: 30px;
+    line-height: 2.6;
+  }
+
+  .foodChar {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .div {
+    width: 25px;
+    height: 20px;
+    line-height: 1.6;
+  }
+
+  .foodChar {
+    width: 15px;
+    height: 15px;
+  }
+}
