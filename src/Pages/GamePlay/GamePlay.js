@@ -22,7 +22,7 @@ const GamePlay = ({ state, setInputValue }) => {
   const [noMore, setNoMore] = useState(true);
   const [contentArray, setContentArray] = useState([]);
   const [randomPlayerId, setRandomPlayerId] = useState(0);
-  
+
   const counter = useRef(<Counter />);
   if (noMore) {
     let array = randonNumbers(state.grid);
@@ -32,45 +32,59 @@ const GamePlay = ({ state, setInputValue }) => {
     setNoMore(() => false);
   }
 
-  const { board, life, topContainer, heart, lifeBar, lifeBack, grid, gridTimes } = Styles;
+  const {
+    board,
+    life,
+    topContainer,
+    heart,
+    lifeBar,
+    lifeBack,
+    grid,
+    gridTimes,
+  } = Styles;
   // console.log(moves, eatenFood);
   const Play = (
     <div
       style={{
         backgroundImage: `url(${BackgroundImage})`,
-        backgroundAttachment: 'initial',
+        backgroundAttachment: "initial",
         backgroundSize: "100% 100%",
         width: "100%",
         minHeight: 700,
-        paddingTop: 60,
+        paddingTop: 30,
       }}
     >
       <div className={board}>
         <div className={topContainer}>
           <div className={gridTimes}>
             Grid:{" "}
-            <span style={{ fontWeight: "bolder", marginRight: 80 }}>
+            <span style={{ fontWeight: "bolder"}}>
               {state.grid}&nbsp;&times;&nbsp;{state.grid}
             </span>
           </div>
-          <div style={{marginRight: 70}}>
-            <img
-              style={{ width: 150}}
-              className={`${life} ${lifeBack}`}
-              src={LifeBarBackground}
-              alt="Life bar background"
-            />
-            <img
-              style={{ width: ((moves.maximumMoves - moves.totalMoves) * 150) /moves.maximumMoves, height: 15 }}
-              className={`${life} ${lifeBar}`}
-              src={LifeBar}
-              alt="Life bar"
-            />
-            <img className={`${life} ${heart}`} src={Life} alt="Life" />
-          </div>
+
           {counter.current}
         </div>
-
+        <div style={{  marginBottom: 40, paddingLeft: 70 }}>
+          <img
+            style={{ width: 150 }}
+            className={`${life} ${lifeBack}`}
+            src={LifeBarBackground}
+            alt="Life bar background"
+          />
+          <img
+            style={{
+              width:
+                ((moves.maximumMoves - moves.totalMoves) * 150) /
+                moves.maximumMoves,
+              height: 15,
+            }}
+            className={`${life} ${lifeBar}`}
+            src={LifeBar}
+            alt="Life bar"
+          />
+          <img className={`${life} ${heart}`} src={Life} alt="Life" />
+        </div>
         <div className={grid}>
           <Rows
             clickedArray={clickedArray}
@@ -95,17 +109,17 @@ const GamePlay = ({ state, setInputValue }) => {
 
         <div className={topContainer}>
           <div>
-            Maximum moves:{" "}
+            Max moves:{" "}
             <span style={{ fontWeight: "bolder" }}>{moves.maximumMoves}</span>
           </div>
 
           <div>
-            Total moves:{" "}
+            Moves:{" "}
             <span style={{ fontWeight: "bolder" }}>{moves.totalMoves}</span>
           </div>
 
           <div>
-            Remaining moves:{" "}
+            Moves Left:{" "}
             <span style={{ fontWeight: "bolder" }}>
               {moves.maximumMoves - moves.totalMoves}
             </span>
