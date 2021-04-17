@@ -93,6 +93,7 @@ const GameStart = ({ state }) => {
               min="5"
               max="12"
               value={inputValue}
+              onFocus={() => false}
             />
             <div className={btns}>
               <div>

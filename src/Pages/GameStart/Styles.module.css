@@ -36,21 +36,15 @@
 
 .title {
   margin: 10px auto 0px;
-  /* width: 400px; */
-  /* height: 77px; */
-  /* left: 493px; */
   top: 345px;
   font-family: Inter;
   font-style: normal;
   font-weight: 600;
   font-size: 50px;
-  /* line-height: 77px; */
-
   color: #ffc700;
 }
 
 .text1 {
-  /* position: static; */
   margin-top: 23px;
   height: 29px;
 
@@ -58,36 +52,21 @@
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  /* line-height: 29px; */
-  /* identical to box height */
-
   text-align: center;
 
   color: #cbcbff;
-
-  /* Inside Auto Layout */
 }
 
 .text2 {
-  /* position: static; */
-  /* width: 380px; */
-  /* height: 29px; */
-  /* left: 52.5px; */
-  /* top: 49px; */
   margin-top: 20px;
 
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  /* line-height: 29px; */
-  /* identical to box height */
-
   text-align: center;
 
   color: #cbcbff;
-
-  /* Inside Auto Layout */
 }
 
 .gridContainer {
@@ -109,16 +88,11 @@
   width: 91px;
   height: 44px;
   background-color:  transparent;
-  /* left: 219px;
-top: 12px; */
   margin-left: 20px;
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
-  /* line-height: 44px; */
-  /* identical to box height */
-
   color: #fff;
 }
 
@@ -150,11 +124,8 @@ input[type="number"]::-webkit-outer-spin-button {
 .button {
   padding: 10px;
   cursor: pointer;
-
   width: 300px;
   height: 60px;
-  
-
   background: #853594;
   border: none;
   border-radius: 10px;

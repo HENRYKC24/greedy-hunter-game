@@ -4,6 +4,7 @@
   background-color: white;
   width: fit-content;
   padding: 20px;
+  padding-top: 10px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -18,6 +19,7 @@
 
 .gridTimes {
   margin-right: 130px;
+  text-align: left;
 }
 
 .heart {
@@ -43,7 +45,8 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  
 }
 
 
