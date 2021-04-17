@@ -3,7 +3,7 @@
   text-align: center;
   background-color: white;
   width: fit-content;
-  padding: 40px;
+  padding: 20px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
 }
 
 .topContainer {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
