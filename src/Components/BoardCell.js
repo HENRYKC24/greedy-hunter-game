@@ -25,20 +25,16 @@ const BoardCell = ({
   return (
     <div
       style={{
-        width: 56,
-        height: 50,
-        lineHeight: 4,
+        width: 45,
+        height: 40,
+        lineHeight: 3.6,
         border: "1.234345px solid #853594",
         textAlign: "center",
       }}
       onClick={() => {
         const abs = Math.abs(id - randomPlayerId);
-        
-        if (
-          !clickedArray.includes(id) &&
-          contentArray.includes(id) &&
-          (abs === 1 || abs === rows)
-        ) {
+
+        if (contentArray.includes(id) && (abs === 1 || abs === rows)) {
           setEatenFood((prev) => prev + 1);
         }
 
@@ -48,7 +44,6 @@ const BoardCell = ({
 
         if (moves.maximumMoves - moves.totalMoves === 0) {
           setLost(true);
-          
         }
 
         if (abs === 1 || abs === rows) {

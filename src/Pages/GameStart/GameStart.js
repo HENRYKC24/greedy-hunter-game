@@ -27,7 +27,12 @@ const GameStart = ({ state }) => {
   } = Styles;
 
   const handleChange = (e) => {
-    setInputValue(e.target.value);
+    if(Number(e.target.value) < 5 && !isNaN(parseInt(e.target.value))) {
+      setInputValue(5);
+    }
+    if(parseInt(e.target.value, 10) > 12 || parseInt(e.target.value < 5)) {
+      setInputValue(inputValue);
+    }
   };
 
   const handleIncrease = (param) => {
@@ -47,12 +52,14 @@ const GameStart = ({ state }) => {
     <div className={container}>
       <img className={sideImage} src={SideImage} alt="Side grid" />
 
+      
+
       <div className={middle}>
         <img className={char} src={Character} alt="character" />
         <div className={title}>{state.title}</div>
 
         <div className={text1}>
-          {state.text1} {state.food ? state.food + "/" + state.grid : null}
+          {state.text1} {state.food + "/" + state.grid}
         </div>
         <div className={text2}>
           {state.text2}
@@ -82,10 +89,9 @@ const GameStart = ({ state }) => {
             <input
               onChange={handleChange}
               className={input}
-              type="text"
+              type="number"
               min="5"
               max="12"
-              autoFocus
               value={inputValue}
             />
             <div className={btns}>
