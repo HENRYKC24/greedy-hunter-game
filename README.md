@@ -1,17 +1,17 @@
-# Memory Game
-This is a game built with HTML, CSS, JavaScript, and jQuery. It tests how you can memorize the pattern of blinking of some randomly blinking boxes. It can help you improve your retentive memory.
+# Greedy Hunter Game
+This is an interactive game displayed on a grid. The number of rows and columns in the grid system is dependent on the user's preference. It was built with HTML, CSS, JS, and React.
 ## Built With
 
 - HTML
 - CSS
 - JavaScript
-- jQuery
+- React
 
 ## Live Demo
 
 [Live Demo Link](https://henrykc24.github.io/greedy-hunter-game/)
 
-![screenshot](./app_screenshot.png)
+![screenshot](./Screenshot.png)
 
 ## Author
 
