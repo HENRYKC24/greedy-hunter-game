@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/greedy-hunter-game/static/css/main.af19681d.chunk.css",
-    "main.js": "/greedy-hunter-game/static/js/main.4861f90a.chunk.js",
-    "main.js.map": "/greedy-hunter-game/static/js/main.4861f90a.chunk.js.map",
-    "runtime-main.js": "/greedy-hunter-game/static/js/runtime-main.fb44f32b.js",
-    "runtime-main.js.map": "/greedy-hunter-game/static/js/runtime-main.fb44f32b.js.map",
-    "static/js/2.d8a43002.chunk.js": "/greedy-hunter-game/static/js/2.d8a43002.chunk.js",
-    "static/js/2.d8a43002.chunk.js.map": "/greedy-hunter-game/static/js/2.d8a43002.chunk.js.map",
-    "static/js/3.5130b323.chunk.js": "/greedy-hunter-game/static/js/3.5130b323.chunk.js",
-    "static/js/3.5130b323.chunk.js.map": "/greedy-hunter-game/static/js/3.5130b323.chunk.js.map",
+    "main.css": "/greedy-hunter-game/static/css/main.c97b27a6.chunk.css",
+    "main.js": "/greedy-hunter-game/static/js/main.6cf6e17a.chunk.js",
+    "main.js.map": "/greedy-hunter-game/static/js/main.6cf6e17a.chunk.js.map",
+    "runtime-main.js": "/greedy-hunter-game/static/js/runtime-main.53d066b9.js",
+    "runtime-main.js.map": "/greedy-hunter-game/static/js/runtime-main.53d066b9.js.map",
+    "static/js/2.43d0faaf.chunk.js": "/greedy-hunter-game/static/js/2.43d0faaf.chunk.js",
+    "static/js/2.43d0faaf.chunk.js.map": "/greedy-hunter-game/static/js/2.43d0faaf.chunk.js.map",
+    "static/js/3.68efb427.chunk.js": "/greedy-hunter-game/static/js/3.68efb427.chunk.js",
+    "static/js/3.68efb427.chunk.js.map": "/greedy-hunter-game/static/js/3.68efb427.chunk.js.map",
     "index.html": "/greedy-hunter-game/index.html",
-    "static/css/main.af19681d.chunk.css.map": "/greedy-hunter-game/static/css/main.af19681d.chunk.css.map",
-    "static/js/2.d8a43002.chunk.js.LICENSE.txt": "/greedy-hunter-game/static/js/2.d8a43002.chunk.js.LICENSE.txt",
+    "static/css/main.c97b27a6.chunk.css.map": "/greedy-hunter-game/static/css/main.c97b27a6.chunk.css.map",
+    "static/js/2.43d0faaf.chunk.js.LICENSE.txt": "/greedy-hunter-game/static/js/2.43d0faaf.chunk.js.LICENSE.txt",
     "static/media/gamePlayBg.e1af5aa5.jpg": "/greedy-hunter-game/static/media/gamePlayBg.e1af5aa5.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb44f32b.js",
-    "static/js/2.d8a43002.chunk.js",
-    "static/css/main.af19681d.chunk.css",
-    "static/js/main.4861f90a.chunk.js"
+    "static/js/runtime-main.53d066b9.js",
+    "static/js/2.43d0faaf.chunk.js",
+    "static/css/main.c97b27a6.chunk.css",
+    "static/js/main.6cf6e17a.chunk.js"
   ]
 }
