@@ -59,7 +59,7 @@ const GameStart = ({ state }) => {
         <div className={title}>{state.title}</div>
 
         <div className={text1}>
-          {state.text1} {state.food + "/" + state.grid}
+          {state.text1}
         </div>
         <div className={text2}>
           {state.text2}
