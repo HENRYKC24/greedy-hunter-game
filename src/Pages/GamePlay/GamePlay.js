@@ -42,7 +42,6 @@ const GamePlay = ({ state, setInputValue }) => {
     grid,
     gridTimes,
   } = Styles;
-  // console.log(moves, eatenFood);
   const Play = (
     <div
       style={{
