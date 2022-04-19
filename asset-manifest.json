@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/greedy-hunter-game/static/css/main.c97b27a6.chunk.css",
-    "main.js": "/greedy-hunter-game/static/js/main.6cf6e17a.chunk.js",
-    "main.js.map": "/greedy-hunter-game/static/js/main.6cf6e17a.chunk.js.map",
+    "main.js": "/greedy-hunter-game/static/js/main.1a96f717.chunk.js",
+    "main.js.map": "/greedy-hunter-game/static/js/main.1a96f717.chunk.js.map",
     "runtime-main.js": "/greedy-hunter-game/static/js/runtime-main.53d066b9.js",
     "runtime-main.js.map": "/greedy-hunter-game/static/js/runtime-main.53d066b9.js.map",
     "static/js/2.43d0faaf.chunk.js": "/greedy-hunter-game/static/js/2.43d0faaf.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.53d066b9.js",
     "static/js/2.43d0faaf.chunk.js",
     "static/css/main.c97b27a6.chunk.css",
-    "static/js/main.6cf6e17a.chunk.js"
+    "static/js/main.1a96f717.chunk.js"
   ]
 }
