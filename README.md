@@ -1,39 +1,28 @@
-# Greedy Hunter Game
-This is an interactive game displayed on a grid. The number of rows and columns in the grid system is dependent on the user's preference. It was built with HTML, CSS, JS, and React.
-## Built With
+# Greedy Hunter
 
-- HTML
-- CSS
-- JavaScript
-- React
+A puzzle game: eat every orb on the board before your moves run out.
 
-## Live Demo
+**[Play it](https://henrykc24.github.io/greedy-hunter-game/)**
 
-[Live Demo Link](https://henrykc24.github.io/greedy-hunter-game/)
+![Greedy Hunter](./Screenshot.png)
 
-![screenshot](./Screenshot.png)
+## How to play
+
+- Choose a board from 5 × 5 to 12 × 12. A board has as many orbs as it has rows.
+- Move one square at a time: tap a glowing square next to the hunter, swipe, or use the arrow keys (or W A S D).
+- The energy bar shows the moves you have left. Every board can be won: the moves allowed are never fewer than a nearest-orb-first route.
+- Your best time for each board size is kept in your browser.
+
+## Built with
+
+HTML, CSS and JavaScript, no framework and no build step. Works on phones and desktops, with keyboard and screen-reader support.
+
+The first version (2021) was built in React from a recruiter's Figma designs; it is in this repository's history.
 
 ## Author
 
-👤 **Henry Kc**
+**Henry KC Eze** · [Website](https://henrykc24.github.io/my-portfolio/) · [GitHub](https://github.com/HENRYKC24) · [LinkedIn](https://linkedin.com/in/henry-kc)
 
-- GitHub: [@githubhandle](https://github.com/henrykc24)
-- Twitter: [@twitterhandle](https://twitter.com/henrykc24)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/henry-kc)
+## License
 
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/HENRYKC24/greedy-hunter-game/issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-- I am thankful to all my fellow developers whom I reach out to whenever I have a blocker.
-## 📝 License
-
-This project is [MIT](./LICENSE) licensed.
+[MIT](./LICENSE)

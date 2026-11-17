@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Greedy Hunter · a puzzle game by Henry KC Eze</title>
+    <meta name="description" content="Greedy Hunter: eat every orb on the board before your moves run out. Plan the shortest route. Plays with touch, swipes or the keyboard." />
+    <meta name="theme-color" content="#1b1033" />
+    <meta property="og:title" content="Greedy Hunter" />
+    <meta property="og:description" content="Eat every orb before your moves run out. A puzzle game by Henry KC Eze." />
+    <meta property="og:image" content="https://henrykc24.github.io/greedy-hunter-game/Screenshot.png" />
+    <link rel="icon" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./game.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <!-- Start -->
+      <section class="screen" id="start" aria-labelledby="title">
+        <img class="hero-hunter" src="./assets/hunter.png" alt="" width="132" height="144" />
+        <h1 id="title">Greedy Hunter</h1>
+        <p class="tagline">Eat every orb before your moves run out.</p>
+
+        <div class="card">
+          <div class="label">Board size</div>
+          <div class="stepper" role="group" aria-label="Board size">
+            <button class="step" id="smaller" type="button" aria-label="Smaller board">−</button>
+            <output id="size" aria-live="polite">6 × 6</output>
+            <button class="step" id="bigger" type="button" aria-label="Bigger board">+</button>
+          </div>
+          <p class="hint" id="size-hint">6 orbs to find</p>
+          <button class="primary" id="play" type="button">Play</button>
+          <p class="best" id="best-start"></p>
+        </div>
+
+        <details class="how">
+          <summary>How to play</summary>
+          <ul>
+            <li>Move one square at a time: tap a square next to the hunter, swipe, or use the arrow keys (or W A S D).</li>
+            <li>Step onto an orb to eat it. Eat them all to win.</li>
+            <li>You have a limited number of moves, shown by the energy bar: plan the shortest route.</li>
+            <li>Bigger boards mean more orbs and more planning.</li>
+          </ul>
+        </details>
+        <footer class="credit">
+          A game by <a href="https://henrykc24.github.io/my-portfolio/">Henry KC Eze</a>
+        </footer>
+      </section>
+
+      <!-- Game -->
+      <section class="screen hidden" id="game" aria-label="Game">
+        <header class="hud">
+          <button class="icon-btn" id="back" type="button" aria-label="Back to menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="stat"><span class="stat-label">Orbs</span><span id="orbs">0/0</span></div>
+          <div class="stat"><span class="stat-label">Time</span><span id="time">0:00</span></div>
+          <button class="icon-btn" id="restart" type="button" aria-label="New board">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+          </button>
+        </header>
+
+        <div class="energy" aria-label="Moves left">
+          <svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.4 1 5 3 1.6-2 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          <div class="bar"><div class="fill" id="fill"></div></div>
+          <span class="moves" id="moves">0 moves</span>
+        </div>
+
+        <div class="board" id="board" role="grid" aria-label="Board"></div>
+        <p class="tip" id="tip">Tap a glowing square, swipe, or use the arrow keys.</p>
+      </section>
+
+      <!-- Result -->
+      <div class="overlay hidden" id="result" role="dialog" aria-modal="true" aria-labelledby="result-title">
+        <div class="card result-card">
+          <img class="result-hunter" src="./assets/hunter.png" alt="" width="88" height="96" />
+          <h2 id="result-title">Bravo!</h2>
+          <p id="result-text"></p>
+          <div class="result-stats">
+            <div><strong id="r-orbs">0</strong><span>orbs</span></div>
+            <div><strong id="r-time">0:00</strong><span>time</span></div>
+            <div><strong id="r-moves">0</strong><span>moves</span></div>
+          </div>
+          <p class="best" id="r-best"></p>
+          <div class="result-actions">
+            <button class="primary" id="again" type="button">Play again</button>
+            <button class="secondary" id="menu" type="button">Change board</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
